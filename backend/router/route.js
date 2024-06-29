@@ -21,5 +21,5 @@ router.route("/").get(authcontrol.home); // this done by controller (logical cod
 // router.route("/register").get((req, res) => {
 //   res.status(200).send("welcome to new register page");
 // });
-router.route("/register").get(authcontrol.register);
+router.route("/register").post(authcontrol.register);
 module.exports = router;
