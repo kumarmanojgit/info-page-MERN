@@ -26,7 +26,13 @@ const register = async (req, res) => {
       password,
     });
 
-    res.status(200).json({ message: userCreated });
+    res
+      .status(200)
+      .json({
+        message: "registration successfull",
+        token: await userCreated.generateToken(),
+        userId: userCreated._id.toString(),
+      });
   } catch (error) {
     console.log("internal error");
   }
